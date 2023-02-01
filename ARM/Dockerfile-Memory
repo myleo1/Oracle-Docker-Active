@@ -1,0 +1,8 @@
+FROM alpine:3.17.1
+LABEL maintainer="leo <leo@leosgo.com>" \
+	version="v1.0.0" \
+	description="Oracle-Docker-Active"
+RUN apk update \
+    && apk add --no-cache stress-ng
+# 产生1个子进程,每个进程分配12%的剩余内存,持续1.5h
+CMD ["/usr/bin/stress-ng","--vm","1","--vm-bytes","12%","--vm-keep"]
