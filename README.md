@@ -20,7 +20,7 @@
 
 由于stress-ng调用内存压力测试时，会产生比较大的CPU负载，而ARM机型需要一直保持内存在10%以上，故本镜像对于ARM机型暂时也统一使用CPU占用来解决活跃度问题
 
-## 使用
+## 开始锻炼
 
 此Docker镜像将会在北京时间凌晨3点20分开始占用15%左右的CPU资源，一直持续1.5小时来满足CPU占用的要求
 
@@ -36,8 +36,29 @@ docker run -d --name oracle-active --restart=always myleo1/oracle-docker-active:
 docker run -d --name oracle-active --restart=always myleo1/oracle-docker-active:amd64
 ```
 
+## 取消锻炼
+
+```bash
+docker rm -f oracle-active
+```
+
+对于ARM机型：
+
+```bash
+docker rmi myleo1/oracle-docker-active:arm64
+```
+
+对于AMD机型：
+
+```bash
+docker rmi myleo1/oracle-docker-active:amd64
+```
+
+
+
 ## 日志查看/锻炼情况查看
 
 ```bash
 docker logs -f --tail=50 oracle-active
 ```
+
