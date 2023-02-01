@@ -27,12 +27,12 @@
 对于ARM机型：
 
 ```bash
-docker run -d --restart=always myleo1/oracle-docker-active:arm64
+docker run -d --name oracle-active --restart=always myleo1/oracle-docker-active:arm64
 ```
 
 对于AMD机型：
 
 ```bash
-docker run -d --restart=always myleo1/oracle-docker-active:amd64
+docker run -d --name oracle-active --restart=always myleo1/oracle-docker-active:amd64
 ```
 
