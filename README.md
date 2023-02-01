@@ -36,3 +36,8 @@ docker run -d --name oracle-active --restart=always myleo1/oracle-docker-active:
 docker run -d --name oracle-active --restart=always myleo1/oracle-docker-active:amd64
 ```
 
+## 日志查看/锻炼情况查看
+
+```bash
+docker logs -f --tail=50 oracle-active
+```
